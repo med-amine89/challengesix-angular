@@ -43,7 +43,7 @@ export class AppComponent {
 
   }
   updateUser(i) {
-    this.users.splice(i,0);
+    this.users.splice(i,0,this.registrationForm.value);
   }
 
 }
