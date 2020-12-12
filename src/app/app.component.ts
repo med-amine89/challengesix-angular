@@ -10,9 +10,8 @@ export class AppComponent {
   title = 'challenge-six';
   registrationForm: FormGroup;
   submited: boolean = false;
-  users = [];
+  users : Array<object> = [];
   registration: any;
-
 
   // Declaration des FormGroup / FormControl / FormArray
 
@@ -40,8 +39,11 @@ export class AppComponent {
     this.users.push(this.registrationForm.value);
   }
   deleteUser(i) {
-    console.log(i);
+    this.users.splice(i,1);
 
+  }
+  updateUser(i) {
+    this.users.splice(i,0);
   }
 
 }
