@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tableau',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tableau.component.css']
 })
 export class TableauComponent implements OnInit {
-
-  constructor() { }
+  @Input() userTable : Array<object>;
+  @Output() deleteuserEvent = new EventEmitter<number>();
+  @Output() updateuserEvent = new EventEmitter<number>();
+  
+  constructor() {}
 
   ngOnInit(): void {
   }
+ 
+  delete(i){
+  this.deleteuserEvent.emit(i);
+  }
+  
+  Update(i){
 
+  }
 }
